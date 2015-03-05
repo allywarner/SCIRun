@@ -150,6 +150,9 @@ private:
   void tryConnectPort(const QPointF& pos, PortWidget* port);
   bool matches(const SCIRun::Dataflow::Networks::ConnectionDescription& cd) const;
 
+  template <typename Func>
+  static void forEachPort(Func func);
+
   const QString name_;
   const SCIRun::Dataflow::Networks::ModuleId moduleId_;
   const SCIRun::Dataflow::Networks::PortId portId_;

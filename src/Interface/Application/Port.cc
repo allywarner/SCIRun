@@ -171,7 +171,7 @@ PortWidget::PortWidget(const QString& name, const QColor& color, const std::stri
 
 PortWidget::~PortWidget()
 {
-  portWidgetMap_[moduleId_.id_][isInput_][portId_] = 0;
+  portWidgetMap_[moduleId_.id_][isInput_].erase(portId_);
 }
 
 QSize PortWidgetBase::sizeHint() const
@@ -307,6 +307,7 @@ void PortWidget::doMouseRelease(Qt::MouseButton button, const QPointF& pos, Qt::
     {
       makeConnection(pos);
     }
+    forEachPort([](PortWidget* p) { p->setHighlight(false); });
   }
   else if (button == Qt::RightButton && (!isConnected() || !isInput()))
   {
@@ -377,6 +378,35 @@ void PortWidget::performDrag(const QPointF& endPos)
     currentConnection_ = connectionFactory_->makeConnectionInProgress(this);
   }
   currentConnection_->update(endPos);
+
+  for (auto& p1 : portWidgetMap_)
+  {
+    for (auto& p2 : p1.second)
+    {
+      for (auto& p3 : p2.second)
+      {
+        if (isInput() != p2.first && get_typename() == p3.second->get_typename())
+        {
+          p3.second->setHighlight(true);
+        }
+      }
+    }
+  }
+}
+
+template <typename Func>
+void PortWidget::forEachPort(Func func)
+{
+  for (auto& p1 : portWidgetMap_)
+  {
+    for (auto& p2 : p1.second)
+    {
+      for (auto& p3 : p2.second)
+      {
+        func(p3.second);
+      }
+    }
+  }
 }
 
 void PortWidget::addConnection(ConnectionLine* c)

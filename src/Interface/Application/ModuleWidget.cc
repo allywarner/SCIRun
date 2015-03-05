@@ -1291,6 +1291,7 @@ void ModuleWidget::handleDialogFatalError(const QString& message)
 void ModuleWidget::highlightPorts()
 {
   ports_->setHighlightPorts(true);
+  //TODO: make these spacing changes a slot that is connected to a signal from the port itself. 
   inputPortLayout_->setSpacing(PORT_SPACING * 4);
   outputPortLayout_->setSpacing(PORT_SPACING * 4);
   Q_EMIT displayChanged();

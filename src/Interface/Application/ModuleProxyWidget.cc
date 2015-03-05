@@ -268,6 +268,7 @@ QVariant ModuleProxyWidget::itemChange(GraphicsItemChange change, const QVariant
 
 void ModuleProxyWidget::createPortPositionProviders()
 {
+  //TODO: this is called i think, but need to extract the hard-coded sizes.
   //std::cout << "create PPPs" << std::endl;
   const int firstPortXPos = 5;
   Q_FOREACH(PortWidget* p, module_->ports().getAllPorts())
@@ -313,7 +314,10 @@ void ModuleProxyWidget::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
   //TODO: need to update PPPs
   //TODO: need to call same in dragEnter event, if connection in progress
   if (doHighlight_)
+  {
     module_->highlightPorts();
+
+  }
   QGraphicsProxyWidget::hoverEnterEvent(event);
 }
 
