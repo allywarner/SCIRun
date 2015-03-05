@@ -197,13 +197,14 @@ void PortWidget::turn_on_light()
   lightOn_ = true;
 }
 
+const double PortWidgetBase::highlightGrowthFactor = 1.7;
+
 void PortWidgetBase::paintEvent(QPaintEvent* event)
 {
   QSize size = sizeHint();
-  const double highlightFactor = 1.7;
   if (isHighlighted_)
   {
-    size *= highlightFactor;
+    size *= highlightGrowthFactor;
     resize(size);
   }
 

@@ -66,6 +66,7 @@ public:
   virtual bool isLightOn() const = 0;
 
   static const int WIDTH = 11;
+  static const double highlightGrowthFactor;
 
 protected:
   explicit PortWidgetBase(QWidget* parent);
