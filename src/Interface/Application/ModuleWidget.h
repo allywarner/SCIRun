@@ -122,6 +122,10 @@ public:
   void createStartupNote();
 
   static const int PORT_SPACING = 3;
+  static const int HIGHLIGHTED_PORT_SPACING = 4 * PORT_SPACING;
+
+  int inputPortSpacing() const { return inputPortSpacing_; }
+  int outputPortSpacing() const { return outputPortSpacing_; }
 
   virtual boost::signals2::connection connectExecuteBegins(const SCIRun::Dataflow::Networks::ExecuteBeginsSignalType::slot_type& subscriber);
   virtual boost::signals2::connection connectExecuteEnds(const SCIRun::Dataflow::Networks::ExecuteEndsSignalType::slot_type& subscriber);
@@ -188,6 +192,7 @@ private:
   boost::timer timer_;
   bool deletedFromGui_, colorLocked_;
   bool isMini_, errored_;
+  int inputPortSpacing_, outputPortSpacing_;
 
   SCIRun::Dataflow::Networks::ModuleHandle theModule_;
   std::atomic<int> previousModuleState_;

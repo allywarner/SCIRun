@@ -269,15 +269,22 @@ QVariant ModuleProxyWidget::itemChange(GraphicsItemChange change, const QVariant
 void ModuleProxyWidget::createPortPositionProviders()
 {
   //TODO: this is called i think, but need to extract the hard-coded sizes.
-  //std::cout << "create PPPs" << std::endl;
+  std::cout << "create PPPs" << std::endl;
   const int firstPortXPos = 5;
   Q_FOREACH(PortWidget* p, module_->ports().getAllPorts())
   {
-    //std::cout << "Setting position provider for port " << p->id() << " at index " << p->getIndex() << " to " << firstPortXPos + (static_cast<int>(p->getIndex()) * (PortWidget::WIDTH + ModuleWidget::PORT_SPACING)) << "," << p->pos().y() << std::endl;
-    QPoint realPosition(firstPortXPos + (static_cast<int>(p->getIndex()) * (PortWidgetBase::WIDTH + ModuleWidget::PORT_SPACING)), p->pos().y());
+    auto spacing = p->isInput() ? module_->inputPortSpacing() : module_->outputPortSpacing();
+    auto correctX = firstPortXPos + static_cast<int>(p->getIndex()) * (p->width() + spacing) + p->width() / 2 - 1;
+    std::cout << "Setting position provider for port " << p->id() << " at index "
+      << p->getIndex() << " to "
+      << correctX
+      << "," << p->pos().y() << std::endl;
+
+    QPoint realPosition(correctX, p->pos().y());
 
     boost::shared_ptr<PositionProvider> pp(new ProxyWidgetPosition(this, realPosition + QPointF(5,5)));
     p->setPositionObject(pp);
+    p->trackConnections();
   }
   if (pos() == QPointF(0, 0) && cachedPosition_ != pos())
   {

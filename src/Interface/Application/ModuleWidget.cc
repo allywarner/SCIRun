@@ -472,6 +472,8 @@ ModuleWidget::ModuleWidget(NetworkEditor* ed, const QString& name, SCIRun::Dataf
   colorLocked_(false),
   isMini_(globalMiniMode_),
   errored_(false),
+  inputPortSpacing_(PORT_SPACING),
+  outputPortSpacing_(PORT_SPACING),
   theModule_(theModule),
   previousModuleState_(UNSET),
   moduleId_(theModule->get_id()),
@@ -1291,16 +1293,25 @@ void ModuleWidget::handleDialogFatalError(const QString& message)
 void ModuleWidget::highlightPorts()
 {
   ports_->setHighlightPorts(true);
-  //TODO: make these spacing changes a slot that is connected to a signal from the port itself. 
-  inputPortLayout_->setSpacing(PORT_SPACING * 4);
-  outputPortLayout_->setSpacing(PORT_SPACING * 4);
+
+  //TODO: make these spacing changes a slot that is connected to a signal from the port itself.
+  inputPortSpacing_ = HIGHLIGHTED_PORT_SPACING;
+  inputPortLayout_->setSpacing(inputPortSpacing_);
+  outputPortSpacing_ = HIGHLIGHTED_PORT_SPACING;
+  outputPortLayout_->setSpacing(outputPortSpacing_);
+
   Q_EMIT displayChanged();
 }
 
 void ModuleWidget::unhighlightPorts()
 {
   ports_->setHighlightPorts(false);
-  inputPortLayout_->setSpacing(PORT_SPACING);
-  outputPortLayout_->setSpacing(PORT_SPACING);
+
+  //TODO: make these spacing changes a slot that is connected to a signal from the port itself.
+  inputPortSpacing_ = PORT_SPACING;
+  inputPortLayout_->setSpacing(inputPortSpacing_);
+  outputPortSpacing_ = PORT_SPACING;
+  outputPortLayout_->setSpacing(outputPortSpacing_);
+
   Q_EMIT displayChanged();
 }
