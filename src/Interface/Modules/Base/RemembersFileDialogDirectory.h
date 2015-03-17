@@ -30,6 +30,9 @@
 #define INTERFACE_APPLICATION_REMEMBERSFILEDIALOGDIRECTORY_H
 
 #include <QDir>
+
+#ifndef Q_MOC_RUN
+
 #include <Interface/Modules/Base/share.h>
 
 namespace SCIRun {
@@ -54,5 +57,7 @@ namespace Gui {
   };
 
 }}
+
+#endif
 
 #endif

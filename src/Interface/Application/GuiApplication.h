@@ -29,6 +29,8 @@
 #ifndef INTERFACE_APPLICATION_GUIAPPLICATION_H
 #define INTERFACE_APPLICATION_GUIAPPLICATION_H
 
+#ifndef Q_MOC_RUN
+
 #include <Interface/Application/share.h>
 
 namespace SCIRun {
@@ -43,5 +45,7 @@ namespace Gui {
   };
 }
 }
+
+#endif
 
 #endif

@@ -29,13 +29,16 @@
 #ifndef INTERFACE_APPLICATION_NOTE_H
 #define INTERFACE_APPLICATION_NOTE_H
 
-#include <Interface/Application/PositionProvider.h>
-#include <boost/shared_ptr.hpp>
-#include <boost/tuple/tuple.hpp>
 #include <QString>
 #include <QFont>
 #include <QColor>
 #include <QPointF>
+
+#ifndef Q_MOC_RUN
+
+#include <Interface/Application/PositionProvider.h>
+#include <boost/shared_ptr.hpp>
+#include <boost/tuple/tuple.hpp>
 
 class QAction;
 class QGraphicsItem;
@@ -106,5 +109,7 @@ namespace Gui {
   };
 }
 }
+
+#endif
 
 #endif

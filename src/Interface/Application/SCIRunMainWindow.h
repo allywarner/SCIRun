@@ -29,18 +29,22 @@
 #ifndef INTERFACE_APPLICATION_SCIRUN_MAIN_WINDOW_H
 #define INTERFACE_APPLICATION_SCIRUN_MAIN_WINDOW_H
 
+#include "ui_SCIRunMainWindow.h"
+
 #include <QDialog>
 #include <QDir>
+
+#ifndef Q_MOC_RUN
+#include <Interface/Application/Note.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/variant.hpp>
-#include <Interface/Application/Note.h>
-#include "ui_SCIRunMainWindow.h"
+#endif
 
 namespace SCIRun {
   namespace Dataflow {
     namespace Engine {
       class NetworkEditorController;
-    }}}
+}}}
 
 namespace SCIRun {
 namespace Gui {

@@ -30,7 +30,10 @@
 #define INTERFACE_APPLICATION_NETWORKEXECUTIONPROGRESSBAR_H
 
 #include <QObject>
+
+#ifndef Q_MOC_RUN
 #include <Core/Thread/Mutex.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

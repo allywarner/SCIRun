@@ -29,6 +29,8 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_SRUTIL_H
 #define INTERFACE_MODULES_RENDER_ES_SRUTIL_H
 
+#ifndef Q_MOC_RUN
+
 #include <cstdint>
 #include <string>
 #include <vector>
@@ -62,3 +64,5 @@ size_t buildNormalRenderingForVBO(std::shared_ptr<std::vector<uint8_t>> vboData,
 } // namespace SCIRun 
 
 #endif 
+
+#endif

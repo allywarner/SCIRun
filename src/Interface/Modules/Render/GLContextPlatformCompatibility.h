@@ -34,10 +34,14 @@
 //
 // Note: If GLEW is ever replaced, review the usefulness of this header.
 
+#ifndef Q_MOC_RUN
+
 #include <Interface/Modules/Render/UndefiningX11Cruft.h>
 
 #include <QtOpenGL/QGLWidget>
 
 #include <Interface/Modules/Render/namespaces.h>
+
+#endif
 
 #endif

@@ -31,8 +31,11 @@
 
 #include <QObject>
 #include <vector>
-#include <boost/atomic.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Dataflow/Network/NetworkFwd.h>
+#include <boost/atomic.hpp>
+#endif
 
 namespace SCIRun {
   namespace Dataflow { namespace Engine { class NetworkEditorController; struct DisableDynamicPortSwitch; struct ModuleCounter; }}

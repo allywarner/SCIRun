@@ -31,6 +31,8 @@
 
 #include <sstream>
 
+#ifndef Q_MOC_RUN
+
 namespace SCIRun {
 
 template <class Point>
@@ -71,4 +73,6 @@ namespace Gui
 
 }
 
+#endif
+    
 #endif

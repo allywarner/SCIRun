@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_CALCULATE_DISTANCE_TO_FIELD_BOUNDARY_H
 
 #include "Interface/Modules/Fields/ui_calculatedistancetofieldboundary.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Fields/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

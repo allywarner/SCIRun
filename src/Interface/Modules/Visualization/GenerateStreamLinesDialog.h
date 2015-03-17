@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_GENERATESTREAMLINES_H
 
 #include "Interface/Modules/Visualization/ui_GenerateStreamLines.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Visualization/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

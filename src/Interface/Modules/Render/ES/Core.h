@@ -29,6 +29,8 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_CORE_HPP
 #define INTERFACE_MODULES_RENDER_ES_CORE_HPP
 
+#ifndef Q_MOC_RUN
+
 #include <es-acorn/Acorn.hpp>
 #include <gl-state/GLState.hpp>
 
@@ -60,4 +62,6 @@ private:
 } // namespace Render
 } // namespace SCIRun
 
-#endif 
+#endif
+
+#endif

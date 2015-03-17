@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_INSERTFIELDSINTOBUNDLE_H
 
 #include "Interface/Modules/Bundle/ui_InsertFieldsIntoBundleDialog.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Bundle/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

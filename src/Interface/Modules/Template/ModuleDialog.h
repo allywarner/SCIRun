@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_@ModuleName@DIALOG_H
 
 #include "Interface/Modules/Fields/ui_@ModuleName@Dialog.h"
-#include <boost/shared_ptr.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <boost/shared_ptr.hpp>
 #include <Interface/Modules/Fields/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

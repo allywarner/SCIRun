@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_NETWORK_NOTES_H
 
 #include "Interface/Modules/String/ui_NetworkNotes.h"
-#include <Interface/Modules/Base/ModuleDialogGeneric.h>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/String/share.h>
+#include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_GENERATEROISTATISTICSDIALOG_H
 
 #include "Interface/Modules/BrainStimulator/ui_GenerateROIStatisticsDialog.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Dataflow/Network/ModuleStateInterface.h>
 #include <Interface/Modules/BrainStimulator/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

@@ -34,19 +34,20 @@
 #ifndef INTERFACE_MODULES_GLWIDGET_H
 #define INTERFACE_MODULES_GLWIDGET_H
 
-// For windows.
-/// \todo Make this definition specific to windows.
+#ifdef _WIN32
 #define NOMINMAX
+#endif
 
+#include <QtOpenGL/QGLWidget>
+
+#ifndef Q_MOC_RUN
 #include <gl-platform/GLPlatform.hpp>
 #include <Interface/Modules/Render/ViewScenePlatformCompatibility.h>
 #include <Interface/Modules/Render/GLContext.h>
 #include <Interface/Modules/Render/QtGLContext.h>
-
 #include <Interface/Modules/Render/ES/SRInterface.h>
 #include <Interface/Modules/Render/namespaces.h>
-
-#include <QtOpenGL/QGLWidget>
+#endif
 
 namespace SCIRun {
 namespace Gui {

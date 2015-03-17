@@ -29,9 +29,12 @@
 #ifndef INTERFACE_APPLICATION_MODULEPROXYWIDGET_H
 #define INTERFACE_APPLICATION_MODULEPROXYWIDGET_H
 
+#include <QGraphicsProxyWidget>
+
+#ifndef Q_MOC_RUN
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Interface/Application/Note.h>
-#include <QGraphicsProxyWidget>
+#endif
 
 namespace SCIRun
 {

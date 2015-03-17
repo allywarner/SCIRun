@@ -29,6 +29,8 @@
 #ifndef INTERFACE_APPLICATION_HAS_NOTES_H
 #define INTERFACE_APPLICATION_HAS_NOTES_H
 
+#ifndef Q_MOC_RUN
+
 #include <Interface/Application/NoteEditor.h>
 
 class QAction;
@@ -56,5 +58,7 @@ namespace Gui {
 
 }
 }
+
+#endif
 
 #endif

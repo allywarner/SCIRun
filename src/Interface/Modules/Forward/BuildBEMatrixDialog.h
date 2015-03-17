@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_FORWARD_BUILDBEMATRIXDIALOG_H
 
 #include "Interface/Modules/Forward/ui_BuildBEMatrix.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Dataflow/Network/ModuleStateInterface.h>
 #include <Interface/Modules/Forward/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

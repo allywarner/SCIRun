@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_MATH_CONVERTMATRIXTYPE_H
 
 #include "Interface/Modules/Math/ui_ConvertMatrixType.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Math/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

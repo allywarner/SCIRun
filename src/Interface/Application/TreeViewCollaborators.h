@@ -31,6 +31,8 @@
 
 #include <QtGui>
 
+#ifndef Q_MOC_RUN
+
 namespace SCIRun {
 namespace Gui {
 
@@ -73,4 +75,7 @@ namespace Gui {
 
 }
 }
+
+#endif
+
 #endif

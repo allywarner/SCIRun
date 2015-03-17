@@ -31,15 +31,14 @@ DEALINGS IN THE SOFTWARE.
 
 #include "Interface/Modules/Render/ui_ViewSceneControls.h"
 
+#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-
+#include <Interface/Modules/Render/share.h>
 #include <Interface/Modules/Render/ViewScene.h>
-
 //#include <Modules/Basic/SendScalarModuleState.h>
 //#include <Interface/Modules/Base/ModuleDialogGeneric.h>
-
 #include <Interface/Modules/Render/namespaces.h>
-#include <Interface/Modules/Render/share.h>
+#endif
 
 namespace SCIRun {
   namespace Gui {

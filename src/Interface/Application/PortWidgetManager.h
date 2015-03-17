@@ -29,9 +29,10 @@
 #ifndef INTERFACE_APPLICATION_PORTWIDGETMANAGER_H
 #define INTERFACE_APPLICATION_PORTWIDGETMANAGER_H
 
-#include <boost/range/join.hpp>
-
 #include <Dataflow/Network/NetworkFwd.h>
+
+#ifndef Q_MOC_RUN
+#include <boost/range/join.hpp>
 
 namespace SCIRun {
 namespace Gui {
@@ -68,5 +69,7 @@ private:
 
 }
 }
+
+#endif
 
 #endif

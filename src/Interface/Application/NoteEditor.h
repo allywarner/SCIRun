@@ -31,8 +31,10 @@
 
 #include "ui_NoteEditor.h"
 
+#ifndef Q_MOC_RUN
 #include <Interface/Application/Note.h>
 #include <Dataflow/Network/NetworkFwd.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

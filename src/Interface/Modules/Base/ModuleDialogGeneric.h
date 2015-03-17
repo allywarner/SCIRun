@@ -29,14 +29,17 @@
 #ifndef INTERFACE_APPLICATION_MODULE_DIALOG_GENERIC_H
 #define INTERFACE_APPLICATION_MODULE_DIALOG_GENERIC_H
 
-#include <Interface/Modules/Base/WidgetSlotManagers.h>
-#include <Core/Algorithms/Base/Name.h>
 #include <QtGui>
+
+#ifndef Q_MOC_RUN
 #include <boost/atomic.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/bimap.hpp>
 #include <boost/signals2/connection.hpp>
+#include <Interface/Modules/Base/WidgetSlotManagers.h>
+#include <Core/Algorithms/Base/Name.h>
 #include <Interface/Modules/Base/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

@@ -31,15 +31,17 @@
 
 #include "ui_ProvenanceWindow.h"
 
+#ifndef Q_MOC_RUN
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Dataflow/Engine/Controller/ControllerInterfaces.h>
 #include <Dataflow/Serialization/Network/ModulePositionGetter.h>
 #include <Dataflow/Engine/Controller/ProvenanceManager.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {
 
-  class NetworkEditor;
+class NetworkEditor;
 
 class ProvenanceWindow : public QDockWidget, public Ui::ProvenanceWindow
 {

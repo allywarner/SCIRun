@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_INVERSE_SOLVEINVERSEPROBLEMWITHTIKHONOVDIALOG_H
 
 #include "Interface/Modules/Inverse/ui_SolveInverseProblemWithTikhonov.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Dataflow/Network/ModuleStateInterface.h>
 #include <Interface/Modules/Inverse/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

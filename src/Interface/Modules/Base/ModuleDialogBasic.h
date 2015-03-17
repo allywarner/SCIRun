@@ -30,8 +30,11 @@
 #define INTERFACE_APPLICATION_MODULE_DIALOG_BASIC_H
 
 #include "Interface/Modules/Base/ui_ModuleDialogBasic.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Base/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

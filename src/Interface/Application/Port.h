@@ -29,14 +29,17 @@
 #ifndef INTERFACE_APPLICATION_PORTWIDGET_H
 #define INTERFACE_APPLICATION_PORTWIDGET_H
 
-#include <boost/shared_ptr.hpp>
 #include <QGraphicsWidget>
 #include <QPushButton>
 #include <QColor>
 #include <set>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Application/PositionProvider.h>
 #include <Dataflow/Network/PortInterface.h>
 #include <Dataflow/Network/ConnectionId.h>
+#include <boost/shared_ptr.hpp>
+#endif
 
 class QGraphicsScene;
 

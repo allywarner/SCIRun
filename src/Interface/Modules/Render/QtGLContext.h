@@ -34,6 +34,8 @@
 
 #include <QtOpenGL/QGLWidget>
 
+#ifndef Q_MOC_RUN
+
 namespace SCIRun {
 namespace Gui {
 
@@ -51,3 +53,5 @@ private:
 } // SCIRun
 
 #endif 
+
+#endif

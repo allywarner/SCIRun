@@ -30,6 +30,8 @@
 #define INTERFACE_MODULES_MODULEDIALOGFACTORY_H
 
 #include <QWidget>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Interface/Modules/Factory/share.h>
@@ -57,5 +59,7 @@ namespace SCIRun
 }
 
 #define ADD_MODULE_DIALOG(module, dialog) (#module, boost::factory<dialog*>())
+
+#endif
 
 #endif

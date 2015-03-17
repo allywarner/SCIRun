@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_ELECTRODECOILSETUPDIALOG_H
 
 #include "Interface/Modules/BrainStimulator/ui_ElectrodeCoilSetupDialog.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Core/Algorithms/Base/Variable.h>
 #include <Interface/Modules/BrainStimulator/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

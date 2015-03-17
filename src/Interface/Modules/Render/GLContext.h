@@ -35,7 +35,11 @@
 #define INTERFACE_MODULES_RENDER_GLCONTEXT_H
 
 // For windows.
+#ifdef _WIN32
 #define NOMINMAX
+#endif
+
+#ifndef Q_MOC_RUN
 
 #include <Interface/Modules/Render/GLContextPlatformCompatibility.h>
 
@@ -63,4 +67,6 @@ private:
 } // end of namespace SCIRun
 } // end of namespace Gui
 
-#endif 
+#endif
+
+#endif

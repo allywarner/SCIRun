@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_SEND_SCALAR_H
 
 #include "Interface/Modules/Testing/ui_SendScalar.h"
+
+#ifndef Q_MOC_RUN
 #include <Modules/Basic/SendScalarModuleState.h>
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Testing/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

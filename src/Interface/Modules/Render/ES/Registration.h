@@ -29,6 +29,8 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_REGISTRATION_H
 #define INTERFACE_MODULES_RENDER_ES_REGISTRATION_H
 
+#ifndef Q_MOC_RUN
+
 #include <es-acorn/Acorn.hpp>
 
 namespace SCIRun {
@@ -40,3 +42,5 @@ void rendererRegisterAll(CPM_ES_ACORN_NS::Acorn& core);
 } // namespace SCIRun
 
 #endif 
+
+#endif

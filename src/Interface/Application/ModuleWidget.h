@@ -29,19 +29,21 @@
 #ifndef INTERFACE_APPLICATION_MODULEWIDGET_H
 #define INTERFACE_APPLICATION_MODULEWIDGET_H
 
-#include <boost/shared_ptr.hpp>
-#include <boost/scoped_ptr.hpp>
-#include <boost/timer.hpp>
 #include <QStackedWidget>
 #include <set>
 #include <deque>
 #include <atomic>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Application/Note.h>
 #include <Interface/Application/HasNotes.h>
 #include <Interface/Application/PositionProvider.h>
-
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Dataflow/Network/ExecutableObject.h>
+#include <boost/shared_ptr.hpp>
+#include <boost/scoped_ptr.hpp>
+#include <boost/timer.hpp>
+#endif
 
 class QGraphicsProxyWidget;
 class QDockWidget;

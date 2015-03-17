@@ -32,12 +32,15 @@
 #include <QGraphicsLineItem>
 #include <QGraphicsPathItem>
 #include <QPen>
-#include <boost/function.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Dataflow/Network/ConnectionId.h>
 #include <Interface/Application/Port.h>
 #include <Interface/Application/Note.h>
 #include <Interface/Application/HasNotes.h>
 #include <Core/Utils/Exception.h>
+#include <boost/function.hpp>
+#endif
 
 namespace SCIRun {
 namespace Gui {

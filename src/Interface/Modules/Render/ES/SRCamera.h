@@ -32,6 +32,8 @@
 #ifndef SPIRE_APPSPECIFIC_SCIRUN_SRUNCAMERA_H
 #define SPIRE_APPSPECIFIC_SCIRUN_SRUNCAMERA_H
 
+#ifndef Q_MOC_RUN
+
 #include <Interface/Modules/Render/ES/SRInterface.h>
 
 #include <arc-look-at/ArcLookAt.hpp>
@@ -114,4 +116,6 @@ private:
 } // namespace Render
 } // namespace SCIRun 
 
-#endif 
+#endif
+
+#endif

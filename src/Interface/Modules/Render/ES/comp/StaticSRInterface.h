@@ -29,10 +29,12 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_COMP_STATIC_SR_INTERFACE_H
 #define INTERFACE_MODULES_RENDER_ES_COMP_STATIC_SR_INTERFACE_H
 
+#ifndef Q_MOC_RUN
+
 #include <cstdint>
 #include <entity-system/GenericSystem.hpp>
 #include <es-cereal/ComponentSerialize.hpp>
-#include "../SRInterface.h"
+#include <Interface/Modules/Render/ES/SRInterface.h>
 
 namespace SCIRun {
 namespace Render {
@@ -59,3 +61,5 @@ struct StaticSRInterface
 } // namespace SCIRun
 
 #endif 
+
+#endif

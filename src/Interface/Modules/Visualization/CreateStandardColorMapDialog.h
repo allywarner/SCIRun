@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_CREATESTANDARDCOLORMAPDIALOG_H
 
 #include "Interface/Modules/Visualization/ui_CreateStandardColorMap.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Core/Datatypes/ColorMap.h>
 #include <Interface/Modules/Visualization/share.h>
+#endif
 
 namespace SCIRun {
   namespace Gui {

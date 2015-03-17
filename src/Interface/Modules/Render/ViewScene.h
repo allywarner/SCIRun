@@ -29,21 +29,21 @@ DEALINGS IN THE SOFTWARE.
 #ifndef INTERFACE_MODULES_VIEW_SCENE_H
 #define INTERFACE_MODULES_VIEW_SCENE_H
 
-/// \todo Make this definition specific to windows.
+#ifdef _WIN32
 #define NOMINMAX
+#endif
 
 #include "Interface/Modules/Render/ui_ViewScene.h"
 
-#include <boost/shared_ptr.hpp>
-
+#ifndef Q_MOC_RUN
 #include <Modules/Basic/SendScalarModuleState.h>
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
-
 #include <Interface/Modules/Render/ViewSceneControlsDock.h>
 #include <Interface/Modules/Render/namespaces.h>
-#include <Interface/Modules/Render/share.h>
-
 #include <glm/glm.hpp>
+#include <boost/shared_ptr.hpp>
+#include <Interface/Modules/Render/share.h>
+#endif
 
 //TODO: needs to inherit from ModuleWidget somehow
 class QToolBar;

@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_APPEND_MATRIX_H
 
 #include "Interface/Modules/Math/ui_AppendMatrix.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Math/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

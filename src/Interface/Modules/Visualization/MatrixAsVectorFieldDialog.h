@@ -30,10 +30,13 @@
 #define INTERFACE_MODULES_MATRIX_AS_VECTOR_FIELD_H
 
 #include "Interface/Modules/Visualization/ui_MatrixAsVectorField.h"
-#include <boost/shared_ptr.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Modules/Basic/SendScalarModuleState.h>
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <boost/shared_ptr.hpp>
 #include <Interface/Modules/Visualization/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

@@ -30,8 +30,11 @@
 #define INTERFACE_APPLICATION_WIDGET_SLOT_MANAGERS_H
 
 #include <QObject>
+
+#ifndef Q_MOC_RUN
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Interface/Modules/Base/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

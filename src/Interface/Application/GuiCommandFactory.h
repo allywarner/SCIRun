@@ -29,6 +29,8 @@
 #ifndef INTERFACE_APPLICATION_GUICOMMANDFACTORY_H
 #define INTERFACE_APPLICATION_GUICOMMANDFACTORY_H
 
+#ifndef Q_MOC_RUN
+
 #include <Core/Command/CommandFactory.h>
 
 namespace SCIRun {
@@ -42,4 +44,7 @@ namespace Gui {
 
 }
 }
+
+#endif
+
 #endif

@@ -29,6 +29,8 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_SYSTEMS_RENDER_BASIC_SYS_TRANS_H
 #define INTERFACE_MODULES_RENDER_ES_SYSTEMS_RENDER_BASIC_SYS_TRANS_H
 
+#ifndef Q_MOC_RUN
+
 #include <es-acorn/Acorn.hpp>
 
 namespace SCIRun {
@@ -39,5 +41,7 @@ const char* getSystemName_RenderBasicTransGeom();
 
 } // namespace Render
 } // namespace SCIRun
+
+#endif
 
 #endif

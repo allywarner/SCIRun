@@ -29,10 +29,13 @@
 #ifndef GUI_LOGGER_H
 #define GUI_LOGGER_H
 
+#include <QString>
+
+#ifndef Q_MOC_RUN
+
 #include <Core/Utils/Singleton.h>
 #include <Core/Logging/LoggerFwd.h>
 #include <boost/shared_ptr.hpp>
-#include <QString>
 
 namespace SCIRun {
 namespace Gui {
@@ -49,5 +52,7 @@ namespace Gui {
   };
 
 }}
+
+#endif
 
 #endif

@@ -59,18 +59,18 @@ DEALINGS IN THE SOFTWARE.
 #include <es-fs/Filesystem.hpp>
 #include <es-fs/FilesystemSync.hpp>
 
-#include "CoreBootstrap.h"
-#include "comp/StaticSRInterface.h"
-#include "comp/RenderBasicGeom.h"
-#include "comp/RenderColorMapGeom.h"
-#include "comp/SRRenderState.h"
-#include "comp/RenderList.h"
-#include "comp/StaticWorldLight.h"
-#include "comp/LightingUniforms.h"
-#include "systems/RenderBasicSys.h"
-#include "systems/RenderColorMapSys.h"
-#include "systems/RenderTransBasicSys.h"
-#include "systems/RenderTransColorMapSys.h"
+#include <Interface/Modules/Render/ES/CoreBootstrap.h>
+#include <Interface/Modules/Render/ES/comp/StaticSRInterface.h>
+#include <Interface/Modules/Render/ES/comp/RenderBasicGeom.h>
+#include <Interface/Modules/Render/ES/comp/RenderColorMapGeom.h>
+#include <Interface/Modules/Render/ES/comp/SRRenderState.h>
+#include <Interface/Modules/Render/ES/comp/RenderList.h>
+#include <Interface/Modules/Render/ES/comp/StaticWorldLight.h>
+#include <Interface/Modules/Render/ES/comp/LightingUniforms.h>
+#include <Interface/Modules/Render/ES/systems/RenderBasicSys.h>
+#include <Interface/Modules/Render/ES/systems/RenderColorMapSys.h>
+#include <Interface/Modules/Render/ES/systems/RenderTransBasicSys.h>
+#include <Interface/Modules/Render/ES/systems/RenderTransColorMapSys.h>
 #include <Core/Datatypes/ColorMap.h>
 
 using namespace SCIRun::Core::Datatypes;

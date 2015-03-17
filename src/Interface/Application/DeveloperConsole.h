@@ -34,7 +34,7 @@
 namespace SCIRun {
 namespace Gui {
 
-  class NetworkEditor;
+class NetworkEditor;
 
 class DeveloperConsole : public QDockWidget, public Ui::DeveloperConsole
 {

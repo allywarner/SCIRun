@@ -29,6 +29,8 @@
 #ifndef INTERFACE_APPLICATION_CLOSESTPORTFINDER_H
 #define INTERFACE_APPLICATION_CLOSESTPORTFINDER_H
 
+#ifndef Q_MOC_RUN
+
 class QGraphicsScene;
 class QPointF;
 
@@ -50,4 +52,7 @@ namespace Gui {
 
 }
 }
+
+#endif
+
 #endif

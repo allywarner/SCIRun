@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_SETFIELD_DATA_H
 
 #include "Interface/Modules/Fields/ui_SetFieldDataDialog.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Fields/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

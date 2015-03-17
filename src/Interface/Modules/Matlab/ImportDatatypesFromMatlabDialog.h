@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_MATLAB_IMPORTDATATYPESFROMMATLABDIALOG_H
 
 #include "Interface/Modules/Matlab/ui_ImportDatatypesFromMatlab.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Base/RemembersFileDialogDirectory.h>
 #include <Interface/Modules/Matlab/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

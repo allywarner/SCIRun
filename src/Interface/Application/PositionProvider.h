@@ -29,8 +29,11 @@
 #ifndef POSITION_PROVIDER_H
 #define POSITION_PROVIDER_H
 
-#include <boost/shared_ptr.hpp>
 #include <QPointF>
+
+#ifndef Q_MOC_RUN
+
+#include <boost/shared_ptr.hpp>
 
 class QGraphicsProxyWidget;
 
@@ -89,5 +92,7 @@ private:
 
 }
 }
+
+#endif
 
 #endif

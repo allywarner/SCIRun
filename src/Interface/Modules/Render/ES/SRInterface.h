@@ -32,20 +32,20 @@ DEALINGS IN THE SOFTWARE.
 #include <cstdint>
 #include <memory>
 
-#include <Core/Datatypes/Geometry.h>
-#include <boost/shared_ptr.hpp>
+#ifndef Q_MOC_RUN
 
+#include <Core/Datatypes/Geometry.h>
 #include <Interface/Modules/Render/GLContext.h>
 #include <Interface/Modules/Render/namespaces.h>
-
-#include "Core.h"
-#include "AssetBootstrap.h"
-
+#include <Interface/Modules/Render/ES/Core.h>
+#include <Interface/Modules/Render/ES/AssetBootstrap.h>
 // CPM Modules
 #include <gl-state/GLState.hpp>
 #include <es-render/util/Shader.hpp>
 #include <es-render/comp/CommonUniforms.hpp>
 #include <glm/glm.hpp>
+
+#include <boost/shared_ptr.hpp>
 
 namespace SCIRun {
 	namespace Render {
@@ -287,4 +287,6 @@ namespace SCIRun {
 	} // namespace Render
 } // namespace SCIRun 
 
-#endif 
+#endif
+
+#endif

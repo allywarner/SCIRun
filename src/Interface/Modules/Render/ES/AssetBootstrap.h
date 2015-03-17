@@ -29,6 +29,8 @@
 #ifndef INTERFACE_MODULES_RENDER_ES_ASSET_BOOTSTRAP_H
 #define INTERFACE_MODULES_RENDER_ES_ASSET_BOOTSTRAP_H
 
+#ifndef Q_MOC_RUN
+
 #include <es-acorn/Acorn.hpp>
 
 // Common bootstrap for the entire game application.
@@ -42,5 +44,7 @@ const char* getSystemName_AssetBootstrap();
 
 } // namespace Render
 } // namespace SCIRun
+
+#endif
 
 #endif

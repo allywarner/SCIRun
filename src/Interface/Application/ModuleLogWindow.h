@@ -31,9 +31,10 @@
 
 #include "ui_ModuleLogWindow.h"
 
+#ifndef Q_MOC_RUN
 #include <Core/Logging/LoggerInterface.h>
 #include <Dataflow/Network/NetworkFwd.h>
-
+#endif
 
 namespace SCIRun {
 namespace Gui {

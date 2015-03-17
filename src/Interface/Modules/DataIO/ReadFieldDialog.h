@@ -30,11 +30,14 @@
 #define INTERFACE_MODULES_READ_FIELD_H
 
 #include "Interface/Modules/DataIO/ui_ReadFieldDialog.h"
-#include <boost/shared_ptr.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Modules/Basic/SendScalarModuleState.h>
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Base/RemembersFileDialogDirectory.h>
+#include <boost/shared_ptr.hpp>
 #include <Interface/Modules/DataIO/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

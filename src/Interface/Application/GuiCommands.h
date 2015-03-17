@@ -29,6 +29,8 @@
 #ifndef INTERFACE_APPLICATION_GUICOMMANDS_H
 #define INTERFACE_APPLICATION_GUICOMMANDS_H
 
+#ifndef Q_MOC_RUN
+
 #include <Dataflow/Network/NetworkFwd.h>
 #include <Core/Command/Command.h>
 
@@ -112,4 +114,8 @@ namespace Gui {
 
 }
 }
+
 #endif
+
+#endif
+

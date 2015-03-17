@@ -31,12 +31,12 @@
 
 #include "Interface/Modules/DataIO/ui_ReadMesh.h"
 
-#include <boost/shared_ptr.hpp>
-
+#ifndef Q_MOC_RUN
 #include <Modules/Basic/SendScalarModuleState.h>
-
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <boost/shared_ptr.hpp>
 #include <Interface/Modules/DataIO/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

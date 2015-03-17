@@ -30,9 +30,12 @@
 #define INTERFACE_MODULES_RECEIVE_SCALAR_H
 
 #include "Interface/Modules/Testing/ui_ReceiveScalar.h"
-#include <boost/shared_ptr.hpp>
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
+#include <boost/shared_ptr.hpp>
 #include <Interface/Modules/Testing/share.h>
+#endif
 
 namespace SCIRun {
 namespace Gui {

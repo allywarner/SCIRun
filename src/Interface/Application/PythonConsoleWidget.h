@@ -29,8 +29,11 @@
 #ifndef INTERFACE_APPLICATION_PYTHONCONSOLEWIDGET_H
 #define INTERFACE_APPLICATION_PYTHONCONSOLEWIDGET_H
 
-#include <boost/shared_ptr.hpp>
 #include <QDockWidget>
+
+#ifndef Q_MOC_RUN
+#include <boost/shared_ptr.hpp>
+#endif
 
 #ifdef BUILD_WITH_PYTHON
 class PythonConsoleWidgetPrivate;

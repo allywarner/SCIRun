@@ -30,8 +30,11 @@
 #define INTERFACE_MODULES_MATH_BUILDNOISECOLUMNMATRIX_H 1
 
 #include "Interface/Modules/Math/ui_BuildNoiseColumnMatrix.h"
+
+#ifndef Q_MOC_RUN
 #include <Interface/Modules/Base/ModuleDialogGeneric.h>
 #include <Interface/Modules/Math/share.h>
+#endif
 
 namespace SCIRun {
 	namespace Gui {
