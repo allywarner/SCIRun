@@ -77,10 +77,13 @@ ENDIF(COMMAND CMAKE_POLICY)
 
 PROJECT(tetgen)
 
+OPTION(BUILD_TETGEN_APP "Build tetgen application (library always built)." OFF)
+MARK_AS_ADVANCED(BUILD_TETGEN_APP)
+
 SET(TETGEN_SRCS
-        tetgen.cxx
-        predicates.cxx
-      )
+  tetgen.cxx
+  predicates.cxx
+)
 
 ADD_DEFINITIONS(-DSELF_CHECK)
 
@@ -92,43 +95,46 @@ IF(WIN32 AND MSVC)
   SET(CMAKE_CXX_WARNING_LEVEL 1)
   IF(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
     STRING(REGEX REPLACE "/W[0-4]" "/W1"
-              CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-  ELSE(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+      CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}"
+    )
+  ELSE()
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W1")
-  ENDIF(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+  ENDIF()
 
   SET_SOURCE_FILES_PROPERTIES(predicates.cxx
-                              PROPERTIES
-                                COMPILE_FLAGS "/Od"
-                             )
-ELSE(WIN32 AND MSVC)
+    PROPERTIES
+    COMPILE_FLAGS "/Od"
+  )
+ELSE()
   # Usually we support GCC and MSVC, so we're not likely to run
   # into trouble with this.
   SET_SOURCE_FILES_PROPERTIES(predicates.cxx
-                              PROPERTIES
-                                COMPILE_FLAGS "-O0"
-                             )
-ENDIF(WIN32 AND MSVC)
+    PROPERTIES
+    COMPILE_FLAGS "-O0"
+  )
+ENDIF()
 
 
 SET(SCI_TETGEN_LIBRARY tetlib CACHE INTERNAL "Tetgen library" FORCE)
-SET(SCI_TETGEN_EXECUTABLE tetgen CACHE INTERNAL "Tetgen executable" FORCE)
 SET(SCI_TETGEN_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}
-    CACHE INTERNAL
-      "Tetgen include directories" FORCE)
-
-ADD_EXECUTABLE(${SCI_TETGEN_EXECUTABLE} ${TETGEN_SRCS})
+  CACHE INTERNAL
+  "Tetgen include directories" FORCE
+)
 
 # Tetgen is meant to be built as a static library
 ADD_LIBRARY(${SCI_TETGEN_LIBRARY} STATIC ${TETGEN_SRCS})
 SET_TARGET_PROPERTIES(${SCI_TETGEN_LIBRARY}
-                      PROPERTIES
-                        COMPILE_DEFINITIONS "TETLIBRARY"
-                     )
+  PROPERTIES
+  COMPILE_DEFINITIONS "TETLIBRARY"
+)
 IF(BUILD_SHARED_LIBS AND UNIX AND NOT CYGWIN AND NOT APPLE)
   SET_TARGET_PROPERTIES(${SCI_TETGEN_LIBRARY}
-                        PROPERTIES
-                          COMPILE_FLAGS "-fPIC"
-                       )
-ENDIF(BUILD_SHARED_LIBS AND UNIX AND NOT CYGWIN AND NOT APPLE)
+    PROPERTIES
+    COMPILE_FLAGS "-fPIC"
+  )
+ENDIF()
 
+IF(BUILD_TETGEN_APP)
+  SET(SCI_TETGEN_EXECUTABLE tetgen CACHE INTERNAL "Tetgen executable" FORCE)
+  ADD_EXECUTABLE(${SCI_TETGEN_EXECUTABLE} ${TETGEN_SRCS})
+ENDIF()

@@ -828,8 +828,10 @@ IF(BUILD_WITH_PYTHON)
 ENDIF()
 
 IF(WITH_TETGEN)
-  SET_PROPERTY(TARGET tetgen         PROPERTY FOLDER "Externals")
-  SET_PROPERTY(TARGET tetlib         PROPERTY FOLDER "Externals")
+  IF(BUILD_TETGEN_APP)
+    SET_PROPERTY(TARGET tetgen PROPERTY FOLDER "Externals")
+  ENDIF()
+  SET_PROPERTY(TARGET tetlib PROPERTY FOLDER "Externals")
 ENDIF()
 
 ########################################################################
