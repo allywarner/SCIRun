@@ -173,6 +173,9 @@ Q_SIGNALS:
   void moduleSelected(bool selected);
   void displayChanged();
   void requestModuleVisible();
+  void deleteMeLater();
+  void executeEnds();
+  void signalExecuteButtonIconChangeToStop();
 private Q_SLOTS:
   void updateBackgroundColorForModuleState(int moduleState);
   void updateBackgroundColor(const QString& color);
@@ -182,6 +185,8 @@ private Q_SLOTS:
   void replaceModuleWith();
   void updateDialogWithPortCount();
   void handleDialogFatalError(const QString& message);
+  void changeExecuteButtonToPlay();
+  void changeExecuteButtonToStop();
 private:
   ModuleWidgetDisplayBase* currentDisplay_;
   ModuleWidgetDisplayPtr fullWidgetDisplay_;
