@@ -27,10 +27,10 @@
 #
 
 SET(Core_Math_SRCS
-  CubicPWI.cc 
+  #CubicPWI.cc 
   Gaussian.cc
   LinAlg.c
-  LinearPWI.cc
+  #LinearPWI.cc
   Mat.c
   MiscMath.cc
   MiscMath2.cc
@@ -43,15 +43,15 @@ SET(Core_Math_SRCS
 
 SET(Core_Math_HEADERS
   CatmullRomSpline.h
-  CubicPWI.h
+  #CubicPWI.h
   Gaussian.h
   LinAlg.h
-  LinearPWI.h
+  #LinearPWI.h
   Mat.h
   MiscMath.h
   MiscMath2.h
   MusilRNG.h
-  PiecewiseInterp.h
+  #PiecewiseInterp.h
   TrigTable.h
   #sci_lapack.h
   fft.h
