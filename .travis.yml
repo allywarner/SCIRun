@@ -25,7 +25,6 @@ before_install:
 # make sure cmake is installed, set up latest GCC C++ compiler if necessary
 install:
  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then ./ci/linux_install.sh; fi
-# - if [ "${TRAVIS_OS_NAME}" = "linux" -a "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then ./ci/osx_install.sh; fi
 
 # TODO: could move script to separate file
