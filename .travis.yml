@@ -30,7 +30,9 @@ install:
 # TODO: could move script to separate file
 # Not running unit tests at the moment, so turn off testing, which will
 # hopefully make OS X builds a bit faster
-script: cd bin && cmake -DBUILD_TESTING:BOOL=OFF -DDOWNLOAD_TOOLKITS:BOOL=OFF ../src && make -j8
+script:
+ - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then cd bin && cmake -DBUILD_TESTING=OFF -DDOWNLOAD_TOOLKITS=OFF ../src && make -j8; fi
+ - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then cd bin && cmake -DBUILD_TESTING=OFF -DDOWNLOAD_TOOLKITS=OFF -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC ../src && make -j8; fi
 
 notifications:
   slack: sciinstitute:lZnpQQXNd4Io5iGDPQDpJmI1
