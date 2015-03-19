@@ -12,6 +12,7 @@ fi
 
 if [ "$CXX" = "clang++" ]; then
   sudo apt-get install -qq llvm-3.5 llvm-3.5-dev clang-3.5 libstdc++-4.9-dev
+  sudo apt-get remove llvm clang
   export CXX="clang++-3.5" CC="clang-3.5"
   $CXX --version
 fi
