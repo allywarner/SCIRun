@@ -3,7 +3,7 @@
 
    The MIT License
 
-   Copyright (c) 2012 Scientific Computing and Imaging Institute,
+   Copyright (c) 2015 Scientific Computing and Imaging Institute,
    University of Utah.
 
    License for the specific language governing rights and limitations under
@@ -92,6 +92,7 @@ private:
   QActionGroup* filterActionGroup_;
   QAction* actionEnterWhatsThisMode_;
   QStringList favoriteModuleNames_;
+  QToolButton* executeButton_;
 
 private:
   void postConstructionSignalHookup();
@@ -163,6 +164,9 @@ private Q_SLOTS:
   void highlightPortsChanged();
   void resetWindowLayout();
   void zoomNetwork();
+  void changeExecuteActionIconToStop();
+  void changeExecuteActionIconToPlay();
+  void adjustExecuteButtonAppearance();
   void setDragMode(bool toggle);
   void setSelectMode(bool toggle);
   void adjustModuleDock(int state);
