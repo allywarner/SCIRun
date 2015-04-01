@@ -178,6 +178,9 @@ Q_SIGNALS:
   void deleteMeLater();
   void executeEnds();
   void signalExecuteButtonIconChangeToStop();
+  void disableWidgetDisabling();
+  void reenableWidgetDisabling();
+  void executeAgain();
 private Q_SLOTS:
   void updateBackgroundColorForModuleState(int moduleState);
   void updateBackgroundColor(const QString& color);
