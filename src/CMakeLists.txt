@@ -106,9 +106,9 @@ MESSAGE(STATUS "Git version commit hash: " "${VERSION_HASHVAR}")
 #parse the version information into pieces.
 string(REGEX REPLACE "^v([0-9]+)\\..*" "\\1" VERSION_MAJOR "${VERSION_TAG}")
 string(REGEX REPLACE "^v[0-9]+\\.([0-9]+).*" "\\1" VERSION_MINOR "${VERSION_TAG}")
-#TODO: make generic 
+#TODO: make generic
 string(REGEX REPLACE "^v[0-9]+\\.[0-9]+\\-(alpha.[A-Za-z0-9_]+)\\-?.*" "\\1" VERSION_PATCH "${VERSION_TAG}")
-#TODO: parse SHA 
+#TODO: parse SHA
 #string(REGEX REPLACE "^v[0-9]+\\.[0-9]+\\.[0-9]+(.*)" "\\1" VERSION_SHA1 "${VERSION}")
 #set(VERSION_SHORT "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
 
@@ -497,17 +497,22 @@ FIND_PACKAGE(OpenGL REQUIRED)
 
 # TODO: exclude for headless
 IF(NOT BUILD_HEADLESS)
-  SET(QT_MIN_VERSION "4.8.1")
-  FIND_PACKAGE(Qt4 REQUIRED)
+  SET(QT_MIN_VERSION "5.0")
+  FIND_PACKAGE(Qt5Core REQUIRED)
+  FIND_PACKAGE(Qt5Widgets REQUIRED)
   SET(QT_USE_QTOPENGL TRUE)
 
-  IF(QT_FOUND)
+  #IF(QT_FOUND)
+  # Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
     INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR})
-    INCLUDE(${QT_USE_FILE})
+    #INCLUDE(${QT_USE_FILE})
     ADD_DEFINITIONS(${QT_DEFINITIONS})
-  ELSE()
-    MESSAGE(FATAL_ERROR "QT 4.8 or greater is required to build SCIRun")
-  ENDIF()
+#  ELSE()
+#    MESSAGE(FATAL_ERROR "QT 5.0 or greater is required to build SCIRun")
+#  ENDIF()
 
   ADD_DEFINITIONS(-DQT_NO_KEYWORDS)
 ENDIF()
