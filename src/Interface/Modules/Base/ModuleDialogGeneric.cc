@@ -31,6 +31,22 @@
 #include <Core/Logging/Log.h>
 #include <boost/foreach.hpp>
 #include <Core/Utils/Exception.h>
+#include <QAction>
+#include <QDockWidget>
+#include <QTextEdit>
+#include <QComboBox>
+#include <QSpinBox>
+#include <QDoubleSpinBox>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QTabWidget>
+#include <QTableWidget>
+#include <QCheckBox>
+#include <QToolBar>
+#include <QRadioButton>
+#include <QApplication>
+#include <QMenu>
+#include <QLabel>
 
 using namespace SCIRun::Gui;
 using namespace SCIRun::Dataflow::Networks;

@@ -32,11 +32,26 @@
 #include <Interface/Modules/Base/WidgetSlotManagers.h>
 #include <Core/Algorithms/Base/Name.h>
 #include <QtGui>
+#include <QDialog>
 #include <boost/atomic.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/bimap.hpp>
 #include <boost/signals2/connection.hpp>
 #include <Interface/Modules/Base/share.h>
+
+class QTableWidget;
+class QTabWidget;
+class QToolBar;
+class QDockWidget;
+class QComboBox;
+class QTextEdit;
+class QRadioButton;
+class QCheckBox;
+class QLineEdit;
+class QAbstractButton;
+class QSpinBox;
+class QDoubleSpinBox;
+class QLabel;
 
 namespace SCIRun {
 namespace Gui {
