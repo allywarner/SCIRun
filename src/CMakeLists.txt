@@ -842,9 +842,11 @@ SET_PROPERTY(TARGET Teem_external   PROPERTY FOLDER "Externals")
 
 IF(BUILD_WITH_PYTHON)
   SET_PROPERTY(TARGET Core_Python         PROPERTY FOLDER "Core")
-  SET_PROPERTY(TARGET Core_Python_Tests         PROPERTY FOLDER "Core/Tests")
   SET_PROPERTY(TARGET SCIRunPythonAPI PROPERTY FOLDER "Dataflow/Engine")
-  SET_PROPERTY(TARGET Engine_Python_Tests   PROPERTY FOLDER "Dataflow/Engine/Tests")
+  IF(BUILD_TESTING)
+    SET_PROPERTY(TARGET Core_Python_Tests         PROPERTY FOLDER "Core/Tests")
+    SET_PROPERTY(TARGET Engine_Python_Tests   PROPERTY FOLDER "Dataflow/Engine/Tests")
+  ENDIF()
 ENDIF()
 
 IF(WITH_TETGEN)
