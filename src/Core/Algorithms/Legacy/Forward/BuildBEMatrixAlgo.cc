@@ -228,7 +228,17 @@ void  BuildBEMatrixBase::get_cruse_weights(
   local coordinates, it is easy to show that the E is always [1 ; 0 ; 0]!
   */
   E << 1,0,0;
-  cruse_weights = (E * ones) - A;
+  std::cout << "E: " << E.rows() << " x " << E.cols() << std::endl;
+  std::cout << "ones: " << ones.rows() << " x " << ones.cols() << std::endl;
+  std::cout << "A: " << A.rows() << " x " << A.cols() << std::endl;
+  std::cout << "cruse_weights: " << cruse_weights.rows() << " x " << cruse_weights.cols() << std::endl;
+  //auto A1 = A.eval();
+  //std::cout << "A data\n" << A1 << std::endl;
+  //std::cout << "E*ones\n" << E * ones << std::endl;
+ 
+  auto BBB = (E * ones).eval();
+  cruse_weights = (BBB - A).eval();
+  std::cout << "post-crash?" << std::endl;
 }
 
 void BuildBEMatrixBase::get_g_coef(
@@ -569,6 +579,7 @@ void BuildBEMatrixBaseCompute::make_auto_G_compute(VMesh* hsurf, MatrixType& aut
 
     area = avInn[*fi];
 
+    std::cout << "make_auto_G_compute" << std::endl;
     get_cruse_weights(p1, p2, p3, s, r, area, cruse_weights);
     Vector centroid = (p1 + p2 + p3) / 3.0;
     hsurf->begin(ni); hsurf->end(nie);
@@ -649,7 +660,7 @@ void BuildBEMatrixBaseCompute::make_cross_G_compute(VMesh* hsurf1, VMesh* hsurf2
     Vector p3(hsurf2->get_point(nodes[2]));
 
     area = avInn[*fi];
-
+    std::cout << "make_cross_G_compute" << std::endl;
     get_cruse_weights(p1, p2, p3, s, r, area, cruse_weights);
     Vector centroid = (p1 + p2 + p3) / 3.0;
 
