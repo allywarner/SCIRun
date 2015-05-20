@@ -353,6 +353,7 @@ void NetworkEditor::setupModuleWidget(ModuleWidget* module)
   proxy->setSelected(true);
   bringToFront();
   proxy->setVisible(visibleItems_);
+  proxy->setGraphicsEffect(new QGraphicsDropShadowEffect);
 
   GuiLogger::Instance().log("Module added.");
 }
