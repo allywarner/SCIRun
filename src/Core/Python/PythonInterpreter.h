@@ -26,10 +26,12 @@
  DEALINGS IN THE SOFTWARE.
 */
 
+#ifdef BUILD_WITH_PYTHON
 #ifndef CORE_PYTHON_PYTHONINTERPRETER_H
 #define CORE_PYTHON_PYTHONINTERPRETER_H
 
 #include <boost/python.hpp>
+#include <boost/filesystem/path.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/signals2/signal.hpp>
 
@@ -69,12 +71,12 @@ private:
 	// INITIALIZE_EVENTHANDLER:
 	/// This function initializes the event handler associated with the singleton
 	/// class. It initializes the python interpreter.
-	void initialize_eventhandler();
+  void initialize_eventhandler(const std::string& commandLine, const boost::filesystem::path& libPath);
 
 public:
   // INITIALIZE:
   /// Initialize the python interpreter with extra modules.
-  void initialize( bool needProgramName /*const wchar_t* program_name, const module_list_type& init_list*/ );
+  void initialize(bool needProgramName, const std::string& commandLine, const boost::filesystem::path& libPath);
 
   // PRINT_BANNER:
 	/// Print the basic information about the python interpreter to output_signal_.
@@ -123,4 +125,5 @@ public:
 
 }}
 
+#endif
 #endif

@@ -34,6 +34,7 @@
 
 #include <boost/noncopyable.hpp>
 #include <Dataflow/Network/NetworkFwd.h>
+#include <Core/Command/CommandFactory.h>
 #include <Dataflow/Engine/Python/NetworkEditorPythonInterface.h>
 #include <Dataflow/Engine/Controller/share.h>
 
@@ -42,21 +43,34 @@ namespace Dataflow {
 namespace Engine {
 
   class NetworkEditorController;
+  class PythonImplImpl;
 
-  class PythonImpl : public NetworkEditorPythonInterface, boost::noncopyable
+  class SCISHARE PythonImpl : public NetworkEditorPythonInterface, boost::noncopyable
   {
   public:
-    explicit PythonImpl(NetworkEditorController& nec);
-    virtual boost::shared_ptr<PyModule> addModule(const std::string& name);
-    virtual std::string removeModule(const std::string& id);
-    virtual std::string executeAll(const Networks::ExecutableLookup* lookup);
-    virtual std::string connect(const std::string& moduleId1, int port1, const std::string& moduleId2, int port2);
-    virtual std::string disconnect(const std::string& moduleId1, int port1, const std::string& moduleId2, int port2);
-    virtual std::string saveNetwork(const std::string& filename);
-    virtual std::string loadNetwork(const std::string& filename);
-    virtual std::string quit(bool force);
+    PythonImpl(NetworkEditorController& nec, Core::Commands::GlobalCommandFactoryHandle cmdFactory);
+    virtual boost::shared_ptr<PyModule> addModule(const std::string& name) override;
+    virtual std::string removeModule(const std::string& id) override;
+    virtual std::vector<boost::shared_ptr<PyModule>> moduleList() const override;
+    virtual boost::shared_ptr<PyModule> findModule(const std::string& id) const override;
+    virtual std::string executeAll(const Networks::ExecutableLookup* lookup) override;
+    virtual std::string connect(const std::string& moduleIdFrom, int fromIndex, const std::string& moduleIdTo, int toIndex) override;
+    virtual std::string disconnect(const std::string& moduleIdFrom, int fromIndex, const std::string& moduleIdTo, int toIndex) override;
+    virtual std::string saveNetwork(const std::string& filename) override;
+    virtual std::string loadNetwork(const std::string& filename) override;
+    virtual std::string importNetwork(const std::string& filename) override;
+    virtual std::string quit(bool force) override;
+    virtual void setUnlockFunc(boost::function<void()> unlock) override;
   private:
+    void pythonModuleAddedSlot(const std::string&, Networks::ModuleHandle, ModuleCounter);
+    void pythonModuleRemovedSlot(const Networks::ModuleId&);
+    void executionFromPythonStart();
+    void executionFromPythonFinish(int);
+    boost::shared_ptr<PythonImplImpl> impl_;
+    std::map<std::string, boost::shared_ptr<PyModule>> modules_;
     NetworkEditorController& nec_;
+    Core::Commands::GlobalCommandFactoryHandle cmdFactory_;
+    boost::function<void()> unlock_;
   };
 
 }}}

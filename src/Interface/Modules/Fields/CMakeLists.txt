@@ -52,6 +52,7 @@ SET(Interface_Modules_Fields_FORMS
   calculatedistancetofieldboundary.ui #TODO: fix case
   MapFieldDataOntoElems.ui
   ConvertIndicesToFieldData.ui
+  ConvertMeshToPointCloudDialog.ui
   MapFieldDataOntoNodes.ui
   ClipFieldByFunction.ui
   GenerateSinglePointProbeFromField.ui
@@ -64,6 +65,9 @@ SET(Interface_Modules_Fields_FORMS
   ExtractSimpleIsosurface.ui
   registerwithcorrespondences.ui
   ClipVolumeByIsovalue.ui
+  ChooseInput.ui
+  convertfielddatatype.ui
+  scalefieldmeshanddata.ui
 )
 
 SET(Interface_Modules_Fields_HEADERS
@@ -94,6 +98,7 @@ SET(Interface_Modules_Fields_HEADERS
   ClipFieldByFunctionDialog.h
   RefineMeshDialog.h
   ConvertFieldBasisDialog.h
+  ConvertMeshToPointCloudDialog.h
   share.h
   SwapFieldDataWithMatrixEntriesDialog.h
   EditMeshBoundingBoxDialog.h
@@ -103,6 +108,9 @@ SET(Interface_Modules_Fields_HEADERS
   GeneratePointSamplesFromFieldDialog.h
   GeneratePointSamplesFromFieldOrWidgetDialog.h
   ClipVolumeByIsovalueDialog.h
+  ChooseInputDialog.h
+  ScaleFieldMeshAndDataDialog.h
+  ConvertFieldDataTypeDialog.h
 )
 
 SET(Interface_Modules_Fields_SOURCES
@@ -136,11 +144,15 @@ SET(Interface_Modules_Fields_SOURCES
   RefineMeshDialog.cc
   EditMeshBoundingBoxDialog.cc
   ConvertIndicesToFieldDataDialog.cc
+  ConvertMeshToPointCloudDialog.cc
   ExtractSimpleIsosurfaceDialog.cc
   RegisterWithCorrespondencesDialog.cc
   GeneratePointSamplesFromFieldDialog.cc
   GeneratePointSamplesFromFieldOrWidgetDialog.cc
   ClipVolumeByIsovalueDialog.cc
+  ChooseInputDialog.cc
+  ScaleFieldMeshAndDataDialog.cc
+  ConvertFieldDataTypeDialog.cc
 )
 
 IF(WITH_TETGEN)
@@ -167,6 +179,7 @@ TARGET_LINK_LIBRARIES(Interface_Modules_Fields
   Modules_Fields
   Interface_Modules_Base
   Modules_Legacy_Fields
+  Modules_Basic
   ${SCI_BOOST_LIBRARY}
   ${QT_LIBRARIES}
 )
