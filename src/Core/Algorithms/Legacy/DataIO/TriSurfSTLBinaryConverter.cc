@@ -102,10 +102,10 @@ ConverterPrivate::readFile(const std::string& filename, FieldHandle& field)
     inputfile.open(filename.c_str(), std::ios::in | std::ios::binary);
 
     // check for solid and discard
-    boost::shared_ptr<char> headerBuffer(new char[STL_HEADER_LENGTH]);
-    inputfile.read(headerBuffer.get(), STL_HEADER_LENGTH);
+    std::vector<char> headerBuffer(STL_HEADER_LENGTH);
+    inputfile.read(&headerBuffer[0], STL_HEADER_LENGTH);
 
-    std::string header( headerBuffer.get() );
+    std::string header(headerBuffer.begin(), headerBuffer.end());
     const std::string solidString("solid");
 	std::locale loc;
     for (unsigned int i = 0; i < solidString.length() && i < header.length(); ++i)
@@ -121,9 +121,9 @@ ConverterPrivate::readFile(const std::string& filename, FieldHandle& field)
         this->pr_->warning(filename + " header begins with \"solid\". This may be an ASCII STL file.");
     }
 
-    boost::shared_ptr<char> numTrianglesBuffer(new char[STL_FIELD_LENGTH]);
-    inputfile.read(numTrianglesBuffer.get(), STL_FIELD_LENGTH);
-    unsigned int numTriangles = *( reinterpret_cast<unsigned int*>( numTrianglesBuffer.get() ) );
+    std::vector<char> numTrianglesBuffer(STL_FIELD_LENGTH);
+    inputfile.read(&numTrianglesBuffer[0], STL_FIELD_LENGTH);
+    unsigned int numTriangles = *( reinterpret_cast<unsigned int*>( &numTrianglesBuffer[0] ) );
     FacetList facetList;
 
     vmesh->elem_reserve(numTriangles);
